@@ -3,7 +3,6 @@
 # Skilaverkefni 10
 
 from bottle import *
-import sanitize
 import pymysql
 import os
 
@@ -28,9 +27,9 @@ def nyskraning():
                              passwd='mypassword',
                              db='1604002850_vef2verk10')
 
-    username = sanitize(request.forms.get("username"))
-    password = sanitize(request.forms.get("password"))
-    passconf = sanitize(request.forms.get("passconf"))
+    username = request.forms.get("username")
+    password = request.forms.get("password")
+    passconf = request.forms.get("passconf")
     
     with connection.cursor() as cursor:
         sql = "SELECT user, pass FROM user WHERE user = '"+username+"'"
@@ -53,8 +52,8 @@ def nyskraning():
                              user='1604002850',
                              passwd='mypassword',
                              db='1604002850_vef2verk10')
-    username = sanitize(request.forms.get("username"))
-    password = str(sanitize(request.forms.get("password")))
+    username = request.forms.get("username")
+    password = str(request.forms.get("password"))
     with connection.cursor() as cursor:
         sql = "SELECT pass FROM user WHERE user = '"+username+"'"            
         cursor.execute(sql)
