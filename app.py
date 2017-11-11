@@ -5,6 +5,7 @@
 from bottle import *
 from sanitize import sanitize
 import pymysql
+import os
 
 #static files route
 @route("/static/<filename>")
@@ -79,4 +80,5 @@ def utskraning():
     response.set_cookie("account","", expires=0)
     return template("index.tpl")
     
-run()
+
+run(host='0.0.0.0', port=os.environ.get('PORT'))
