@@ -3,7 +3,7 @@
 # Skilaverkefni 10
 
 from bottle import *
-from sanitize import sanitize
+import sanitize
 import pymysql
 import os
 
