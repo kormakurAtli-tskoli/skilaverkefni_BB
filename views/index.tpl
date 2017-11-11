@@ -13,7 +13,7 @@
 	<input type="submit">
 	</fieldset>
 </form>
-<a href="/"><div class="signup"><h3>Return</h3></div></a>
+<a href="nyskraning"><div class="signup"><h3>Sign up!</h3></div></a>
 </body>
 </html>
 <style type="text/css">
